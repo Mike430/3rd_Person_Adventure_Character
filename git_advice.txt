@@ -1,0 +1,1 @@
+http://stackoverflow.com/questions/11451535/gitignore-not-working 
