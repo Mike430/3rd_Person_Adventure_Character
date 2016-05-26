@@ -1,0 +1,1205 @@
+fileFormatVersion: 2
+guid: d04e700e325a75042a0a74739240800c
+timeCreated: 1464183953
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bone_001
+    100002: Chest
+    100004: CollarBone_L
+    100006: CollarBone_R
+    100008: Eye_L
+    100010: Eye_R
+    100012: EyeStretchCTRL_L
+    100014: EyeStretchCTRL_R
+    100016: Foot_L
+    100018: Foot_R
+    100020: ForeArm_L
+    100022: ForeArm_R
+    100024: Hand_L
+    100026: Hand_R
+    100028: Head
+    100030: Hips
+    100032: IK_ArmPole_L
+    100034: IK_ArmPole_R
+    100036: IK_Feel_Rocker_L
+    100038: IK_Feel_Rocker_R
+    100040: IK_Foot_L
+    100042: IK_Foot_Parent_L
+    100044: IK_Foot_Parent_R
+    100046: IK_Foot_R
+    100048: IK_ForeArm_L
+    100050: IK_ForeArm_R
+    100052: IK_Hand_L
+    100054: IK_Hand_R
+    100056: IK_high_L
+    100058: IK_PoleTarget_L
+    100060: IK_PoleTarget_R
+    100062: IK_Rocker_L
+    100064: IK_Rocker_R
+    100066: IK_Shin_L
+    100068: IK_Shin_R
+    100070: IK_Thigh_R
+    100072: IK_Toe_L
+    100074: IK_Toe_R
+    100076: IK_Toe_Rocker_L
+    100078: IK_Toe_Rocker_R
+    100080: IK_UpperArm_L
+    100082: IK_UpperArm_R
+    100084: Neck
+    100086: PelicParent
+    100088: Ribs
+    100090: RootBone
+    100092: Shin_L
+    100094: Shin_R
+    100096: Spine
+    100098: //RootNode
+    100100: Test_Dummy_Body
+    100102: Test_Dummy_Rig
+    100104: Thigh_L
+    100106: Thigh_R
+    100108: Toe_L
+    100110: Toe_R
+    100112: UpperArm_L
+    100114: UpperArm_R
+    400000: Bone_001
+    400002: Chest
+    400004: CollarBone_L
+    400006: CollarBone_R
+    400008: Eye_L
+    400010: Eye_R
+    400012: EyeStretchCTRL_L
+    400014: EyeStretchCTRL_R
+    400016: Foot_L
+    400018: Foot_R
+    400020: ForeArm_L
+    400022: ForeArm_R
+    400024: Hand_L
+    400026: Hand_R
+    400028: Head
+    400030: Hips
+    400032: IK_ArmPole_L
+    400034: IK_ArmPole_R
+    400036: IK_Feel_Rocker_L
+    400038: IK_Feel_Rocker_R
+    400040: IK_Foot_L
+    400042: IK_Foot_Parent_L
+    400044: IK_Foot_Parent_R
+    400046: IK_Foot_R
+    400048: IK_ForeArm_L
+    400050: IK_ForeArm_R
+    400052: IK_Hand_L
+    400054: IK_Hand_R
+    400056: IK_high_L
+    400058: IK_PoleTarget_L
+    400060: IK_PoleTarget_R
+    400062: IK_Rocker_L
+    400064: IK_Rocker_R
+    400066: IK_Shin_L
+    400068: IK_Shin_R
+    400070: IK_Thigh_R
+    400072: IK_Toe_L
+    400074: IK_Toe_R
+    400076: IK_Toe_Rocker_L
+    400078: IK_Toe_Rocker_R
+    400080: IK_UpperArm_L
+    400082: IK_UpperArm_R
+    400084: Neck
+    400086: PelicParent
+    400088: Ribs
+    400090: RootBone
+    400092: Shin_L
+    400094: Shin_R
+    400096: Spine
+    400098: //RootNode
+    400100: Test_Dummy_Body
+    400102: Test_Dummy_Rig
+    400104: Thigh_L
+    400106: Thigh_R
+    400108: Toe_L
+    400110: Toe_R
+    400112: UpperArm_L
+    400114: UpperArm_R
+    4300000: Test_Dummy_Body
+    7400000: Default Take
+    7400002: AirTime
+    7400004: Falling
+    7400006: Idle
+    7400008: Launched
+    7400010: Sprinting
+    7400012: Walking
+    9500000: //RootNode
+    13700000: Test_Dummy_Body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: -1
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Test_Dummy_Body
+        weight: 1
+      - path: Test_Dummy_Rig
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L/IK_Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_PoleTarget_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R/IK_Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_PoleTarget_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L/IK_Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R/IK_Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L/IK_ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R/IK_ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: AirTime
+      takeName: AirTime
+      firstFrame: -1
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Test_Dummy_Body
+        weight: 1
+      - path: Test_Dummy_Rig
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L/IK_Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_PoleTarget_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R/IK_Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_PoleTarget_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L/IK_Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R/IK_Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L/IK_ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R/IK_ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Falling
+      takeName: Falling
+      firstFrame: -1
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Test_Dummy_Body
+        weight: 1
+      - path: Test_Dummy_Rig
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L/IK_Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_PoleTarget_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R/IK_Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_PoleTarget_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L/IK_Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R/IK_Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L/IK_ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R/IK_ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: -1
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Test_Dummy_Body
+        weight: 1
+      - path: Test_Dummy_Rig
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L/IK_Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_PoleTarget_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R/IK_Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_PoleTarget_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L/IK_Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R/IK_Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L/IK_ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R/IK_ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Launched
+      takeName: Launched
+      firstFrame: -1
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Test_Dummy_Body
+        weight: 1
+      - path: Test_Dummy_Rig
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L/IK_Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_PoleTarget_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R/IK_Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_PoleTarget_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L/IK_Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R/IK_Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L/IK_ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R/IK_ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sprinting
+      takeName: Sprinting
+      firstFrame: -1
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Test_Dummy_Body
+        weight: 1
+      - path: Test_Dummy_Rig
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L/IK_Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_PoleTarget_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R/IK_Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_PoleTarget_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L/IK_Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R/IK_Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L/IK_ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R/IK_ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walking
+      takeName: Walking
+      firstFrame: -1
+      lastFrame: 23
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Test_Dummy_Body
+        weight: 1
+      - path: Test_Dummy_Rig
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Feel_Rocker_L/IK_Toe_Rocker_L/IK_Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_PoleTarget_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_L/IK_Rocker_L
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Feel_Rocker_R/IK_Toe_Rocker_R/IK_Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_PoleTarget_R
+        weight: 1
+      - path: Test_Dummy_Rig/IK_Foot_Parent_R/IK_Rocker_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_ArmPole_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/IK_Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_high_L/IK_Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/IK_Thigh_R/IK_Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_L/Shin_L/Foot_L/Toe_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Hips/Thigh_R/Shin_R/Foot_R/Toe_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/IK_UpperArm_L/IK_ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_L/UpperArm_L/ForeArm_L/Hand_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/IK_UpperArm_R/IK_ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/CollarBone_R/UpperArm_R/ForeArm_R/Hand_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/Eye_R
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_L
+        weight: 1
+      - path: Test_Dummy_Rig/RootBone/PelicParent/Bone_001/Spine/Ribs/Chest/Neck/Head/EyeStretchCTRL_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
