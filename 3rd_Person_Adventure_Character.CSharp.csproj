@@ -74,6 +74,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera_CTRL.cs" />
     <Compile Include="Assets\Scripts\Player_CTRL.cs" />
+    <Compile Include="Assets\Scripts\Target_SCR.cs" />
+    <Compile Include="Assets\Scripts\Targeting_System_SCR.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\AssetStore_Packets\sky5X\README.txt" />
