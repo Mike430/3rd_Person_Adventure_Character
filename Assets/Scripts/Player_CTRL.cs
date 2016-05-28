@@ -3,7 +3,11 @@ using System.Collections;
 
 public class Player_CTRL : MonoBehaviour
 {
-    //bello!
+    [SerializeField]
+    private Targeting_System_SCR _crossHair;
+    [SerializeField]
+    private Line_SCR _ropeLine;
+
     [SerializeField]
     private Transform _cameraPivot;
     [SerializeField]
@@ -11,6 +15,7 @@ public class Player_CTRL : MonoBehaviour
     private Vector3 _cameraForward;
     private Vector3 _cameraRight;
 
+    private GameObject _target;
     private Rigidbody _rigidBD;
     private Animator _animCTRL;
 
@@ -57,6 +62,22 @@ public class Player_CTRL : MonoBehaviour
             _IsRunning = false;
             _IsWalking = false;
         }
+
+
+        if (Input.GetAxis("Fire1") != 0)
+        {
+            if (_crossHair.FoundTarget() && _target == null)
+            {
+                _target = _crossHair.GetTarget();
+                _ropeLine._posA = _target.transform;
+            }
+        }
+        else
+        {
+            _target = null;
+            _ropeLine._posA = transform;
+        }
+
 
         if (!_IsJumping && Input.GetKey(KeyCode.Space))
         {
