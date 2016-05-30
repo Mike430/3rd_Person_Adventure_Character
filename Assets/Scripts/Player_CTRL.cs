@@ -12,8 +12,11 @@ public class Player_CTRL : MonoBehaviour
     private Transform _cameraPivot;
     [SerializeField]
     private GameObject _playerAvatar;
+
     private Vector3 _cameraForward;
     private Vector3 _cameraRight;
+
+    private Vector3 _moveToXZ;
 
     private GameObject _target;
     private Rigidbody _rigidBD;
@@ -23,7 +26,8 @@ public class Player_CTRL : MonoBehaviour
     private bool _IsRunning = false;
     public bool _Ascending = false;
     public bool _Decending = false;
-    private bool _IsJumping = false;
+    public bool _IsJumping = false;
+    public bool _IsAirborn = false;
 
     public float _walkSpeed;
     public float _runSpeed;
@@ -42,19 +46,31 @@ public class Player_CTRL : MonoBehaviour
         _cameraForward = _cameraPivot.forward;
         _cameraRight = _cameraPivot.right;
 
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+        TestForFalling();
+
+        if (!_IsAirborn)
         {
-            if (Input.GetKey(KeyCode.LeftShift))
+            _IsRunning = false;
+            _IsWalking = false;
+
+            if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0) && !_IsAirborn)
             {
-                _IsRunning = true;
-                _IsWalking = false;
-                CalculateHorizontalMovement(_runSpeed);
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    _IsRunning = true;
+                    CalculateHorizontalMovement(_runSpeed);
+                }
+                else
+                {
+                    _IsWalking = true;
+                    CalculateHorizontalMovement(_walkSpeed);
+                }
             }
-            else
+
+            if (!_IsJumping && Input.GetKey(KeyCode.Space))
             {
-                _IsRunning = false;
-                _IsWalking = true;
-                CalculateHorizontalMovement(_walkSpeed);
+                _rigidBD.AddForce(Vector3.up * _jumpForce);
+                _IsJumping = true;
             }
         }
         else
@@ -64,6 +80,24 @@ public class Player_CTRL : MonoBehaviour
         }
 
 
+        UpdateRope();
+
+        UpdateAnimCTRL();
+    }
+
+    void CalculateHorizontalMovement(float speed)
+    {
+        _moveToXZ += speed * (Input.GetAxis("Vertical") * _cameraForward);
+        _moveToXZ += speed * (Input.GetAxis("Horizontal") * _cameraRight);
+
+        _moveToXZ *= Time.deltaTime;
+        //transform.Translate(moveTo);
+        //_rigidBD.AddForce(moveTo);
+        MovePlayerXZ();
+    }
+
+    void UpdateRope()
+    {
         if (Input.GetAxis("Fire1") != 0)
         {
             if (_crossHair.FoundTarget() && _target == null)
@@ -77,47 +111,10 @@ public class Player_CTRL : MonoBehaviour
             _target = null;
             _ropeLine._posA = transform;
         }
-
-
-        if (!_IsJumping && Input.GetKey(KeyCode.Space))
-        {
-            _rigidBD.AddForce(Vector3.up * _jumpForce);
-            _IsJumping = true;
-        }
-
-        UpdateAnimCTRL();
-    }
-
-    void CalculateHorizontalMovement(float speed)
-    {
-        Vector3 moveTo = new Vector3();
-
-        moveTo += speed * (Input.GetAxis("Vertical") * _cameraForward);
-        moveTo += speed * (Input.GetAxis("Horizontal") * _cameraRight);
-
-        moveTo *= Time.deltaTime;
-        //transform.Translate(moveTo);
-        //_rigidBD.AddForce(moveTo);
-        _rigidBD.MovePosition(transform.position + moveTo);
-        TurnPlayerAvatar(moveTo);
     }
 
     void UpdateAnimCTRL()
     {
-        _Ascending = false;
-        _Decending = false;
-
-        Ray floorCheck = new Ray(transform.position, Vector3.down);
-        RaycastHit hit;
-
-        if (!Physics.Raycast(floorCheck, out hit, 0.5f))
-        {
-            if (_rigidBD.velocity.y > 0.001f)
-                _Ascending = true;
-            else if (_rigidBD.velocity.y < -0.001f)
-                _Decending = true;
-        }
-
         _animCTRL.SetBool("Ascending", _Ascending);
         _animCTRL.SetBool("Decending", _Decending);
         _animCTRL.SetBool("IsWalking", _IsWalking);
@@ -136,11 +133,38 @@ public class Player_CTRL : MonoBehaviour
             _cameraPivot.transform.rotation, Time.deltaTime * 10);*/
     }
 
+    void TestForFalling()
+    {
+        _Ascending = false;
+        _Decending = false;
+
+        Vector3 startPos = transform.position;
+        startPos.y += 0.25f; // When Player hits the ground, he can intersect it, pushing the origin through the floor, the ray cast is lifted up slightly so that it always intersects.
+        _IsAirborn = !Physics.Raycast(startPos, Vector3.down, 0.35f);
+
+        if (_IsAirborn)
+        {
+            if (_rigidBD.velocity.y > 0.001f)
+                _Ascending = true;
+            else if (_rigidBD.velocity.y < -0.001f)
+                _Decending = true;
+
+            MovePlayerXZ();
+        }
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (_IsJumping && other.gameObject.tag == "Floor")
         {
             _IsJumping = false;
+            
         }
+    }
+
+    void MovePlayerXZ()
+    {
+        _rigidBD.MovePosition(transform.position + _moveToXZ);
+        TurnPlayerAvatar(_moveToXZ);
     }
 }
