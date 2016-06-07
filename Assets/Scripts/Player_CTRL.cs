@@ -26,10 +26,10 @@ public class Player_CTRL : MonoBehaviour
     private bool _IsWalking = false;
     private bool _IsRunning = false;
     private bool _Ascending = false;
-    public bool _Decending = false;
+    private bool _Decending = false;
     private bool _IsJumping = false;
-    public bool _IsAirborn = false;
-    public bool _swinging = false;
+    private bool _IsAirborn = false;
+    private bool _IsSwinging = false;
 
     public float _walkSpeed;
     public float _runSpeed;
@@ -82,13 +82,6 @@ public class Player_CTRL : MonoBehaviour
             _IsWalking = false;
         }
 
-        if (_swinging)
-        {
-            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
-                CalculateHorizontalMovement(_swingForce);
-        }
-
-
         UpdateRope();
 
         UpdateAnimCTRL();
@@ -119,7 +112,7 @@ public class Player_CTRL : MonoBehaviour
             {
                 if (_rope == null)
                 {
-                    _swinging = true;
+                    _IsSwinging = true;
                     _rigidBD.drag = 0.0f;
                     Debug.Log("Entered create rope");
                     this.gameObject.AddComponent<SpringJoint>();
@@ -134,7 +127,7 @@ public class Player_CTRL : MonoBehaviour
                     Vector3 difference = _target.transform.position - transform.position;
                     float distance = Vector3.Magnitude(difference);
                     _rope.maxDistance = distance;
-                    _rope.minDistance = 0.5f;
+                    _rope.minDistance = 0.75f;
 
                     _rope.spring = 1000.0f;
                     _rope.damper = 0.2f;
@@ -146,12 +139,24 @@ public class Player_CTRL : MonoBehaviour
         }
         else
         {
-            _swinging = false;
+            _IsSwinging = false;
             _rigidBD.drag = 0.5f;
             _target = null;
             _ropeLine._posA = transform;
             Destroy(_rope);
             _rope = null;
+        }
+
+        if (_IsSwinging)
+        {
+            if (Input.GetKey(KeyCode.Q) && _rope.maxDistance > 0.75f)
+                _rope.maxDistance -= 5.0f * Time.deltaTime;
+
+            if (Input.GetKey(KeyCode.E) && _rope.maxDistance < 100.0f)
+                _rope.maxDistance += 5.0f * Time.deltaTime;
+
+            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+                CalculateHorizontalMovement(_swingForce);
         }
     }
 
@@ -206,14 +211,16 @@ public class Player_CTRL : MonoBehaviour
 
     void MovePlayerXZ()
     {
-        if (!_swinging)
+        if (!_IsAirborn)
         {
             _rigidBD.MovePosition(transform.position + _moveToXZ);
             TurnPlayerAvatar(_moveToXZ);
         }
-        else
+        else if (_IsAirborn && !_IsSwinging)
+            _rigidBD.MovePosition(transform.position + _moveToXZ);
+        else if (_IsSwinging)
         {
-            _rigidBD.AddForce(_moveToXZ);
+            _rigidBD.AddForce(_moveToXZ * 5);
             TurnPlayerAvatar(_moveToXZ);
         }
     }
