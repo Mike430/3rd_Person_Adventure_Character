@@ -28,23 +28,27 @@ public class Player_CTRL : MonoBehaviour
     private bool _Ascending = false;
     private bool _Decending = false;
     private bool _IsJumping = false;
-    private bool _IsAirborn = false;
-    private bool _IsSwinging = false;
+    public bool _IsAirborn = false;
+    public bool _IsSwinging = false;
 
     public float _walkSpeed;
     public float _runSpeed;
     public float _jumpForce;
     public float _swingForce;
 
-    // Use this for initialization
-    void Start ()
+    // Prerequisits
+    //==============================================================================
+    private void Start ()
     {
         _rigidBD = GetComponent<Rigidbody>();
         _animCTRL = GetComponentInChildren<Animator>();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+        DetachRopeFromTarget();
+    }
+
+    // Update the character
+    //==============================================================================
+    private void FixedUpdate ()
     {
         _cameraForward = _cameraPivot.forward;
         _cameraRight = _cameraPivot.right;
@@ -87,18 +91,7 @@ public class Player_CTRL : MonoBehaviour
         UpdateAnimCTRL();
     }
 
-    void CalculateHorizontalMovement(float speed)
-    {
-        _moveToXZ += speed * (Input.GetAxis("Vertical") * _cameraForward);
-        _moveToXZ += speed * (Input.GetAxis("Horizontal") * _cameraRight);
-
-        _moveToXZ *= Time.deltaTime;
-        //transform.Translate(moveTo);
-        //_rigidBD.AddForce(moveTo);
-        MovePlayerXZ();
-    }
-
-    void UpdateRope()
+    private void UpdateRope()
     {
         if (Input.GetAxis("Fire1") != 0)
         {
@@ -109,43 +102,10 @@ public class Player_CTRL : MonoBehaviour
             }
 
             if (_target != null && _Decending)
-            {
-                if (_rope == null)
-                {
-                    _IsSwinging = true;
-                    _rigidBD.drag = 0.0f;
-                    Debug.Log("Entered create rope");
-                    this.gameObject.AddComponent<SpringJoint>();
-                    _rope = this.GetComponent<SpringJoint>();
-
-                    _rope.autoConfigureConnectedAnchor = false;
-
-                    _rope.connectedBody = _target.GetComponent<Rigidbody>();
-                    _rope.anchor = new Vector3(0.0f, 0.32f, 0.0f); //_rope.anchor.Set(0.0f, 0.32f, 0.0f);
-                    _rope.connectedAnchor = new Vector3(0.0f, -0.5f, 0.0f); //_rope.connectedAnchor.Set(0.0f, -0.5f, 0.0f);
-
-                    Vector3 difference = _target.transform.position - transform.position;
-                    float distance = Vector3.Magnitude(difference);
-                    _rope.maxDistance = distance;
-                    _rope.minDistance = 0.75f;
-
-                    _rope.spring = 1000.0f;
-                    _rope.damper = 0.2f;
-                    _rope.tolerance = 0.025f;
-                    _rope.breakForce = Mathf.Infinity;
-                    _rope.breakTorque = Mathf.Infinity;
-                }
-            }
+                AttachByRopeToTarget();
         }
         else
-        {
-            _IsSwinging = false;
-            _rigidBD.drag = 0.5f;
-            _target = null;
-            _ropeLine._posA = transform;
-            Destroy(_rope);
-            _rope = null;
-        }
+            DetachRopeFromTarget();
 
         if (_IsSwinging)
         {
@@ -155,20 +115,45 @@ public class Player_CTRL : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && _rope.maxDistance < 100.0f)
                 _rope.maxDistance += 5.0f * Time.deltaTime;
 
-            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+            if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0) && _IsAirborn)
                 CalculateHorizontalMovement(_swingForce);
         }
     }
 
-    void UpdateAnimCTRL()
+
+    // Movement and manipulation of player in world
+    //==============================================================================
+    private void CalculateHorizontalMovement(float speed)
     {
-        _animCTRL.SetBool("Ascending", _Ascending);
-        _animCTRL.SetBool("Decending", _Decending);
-        _animCTRL.SetBool("IsWalking", _IsWalking);
-        _animCTRL.SetBool("IsRunning", _IsRunning);
+        _moveToXZ += speed * (Input.GetAxis("Vertical") * _cameraForward);
+        _moveToXZ += speed * (Input.GetAxis("Horizontal") * _cameraRight);
+
+        _moveToXZ *= Time.deltaTime;
+        MovePlayerXZ();
     }
 
-    void TurnPlayerAvatar(Vector3 heading)
+    private void MovePlayerXZ()
+    {
+        if (!_IsAirborn) // On the ground
+        {
+            //Debug.Log("SHALL WALK");
+            _rigidBD.MovePosition(transform.position + _moveToXZ);
+            TurnPlayerAvatar(_moveToXZ);
+        }
+        else if (_IsSwinging && _IsAirborn) // Swinging around
+        {
+            //Debug.Log("SHALL SWING");
+            _rigidBD.AddForce(_moveToXZ * 5);
+            TurnPlayerAvatar(_moveToXZ);
+        }
+        else if (!_IsSwinging && _IsAirborn) // Falling
+        {
+            //Debug.Log("SHALL FALL");
+            _rigidBD.MovePosition(transform.position + _moveToXZ);
+        }
+    }
+
+    private void TurnPlayerAvatar(Vector3 heading)
     {
         // http://docs.unity3d.com/ScriptReference/Vector3.RotateTowards.html
         float step = 10 * Time.deltaTime;
@@ -180,7 +165,10 @@ public class Player_CTRL : MonoBehaviour
             _cameraPivot.transform.rotation, Time.deltaTime * 10);*/
     }
 
-    void TestForFalling()
+
+    // Update Player Character parameters
+    //==============================================================================
+    private void TestForFalling()
     {
         _Ascending = false;
         _Decending = false;
@@ -200,28 +188,65 @@ public class Player_CTRL : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         if (_IsJumping && other.gameObject.tag == "Floor")
         {
             _IsJumping = false;
-            
+
         }
     }
 
-    void MovePlayerXZ()
+    private void UpdateAnimCTRL()
     {
-        if (!_IsAirborn)
+        _animCTRL.SetBool("Ascending", _Ascending);
+        _animCTRL.SetBool("Decending", _Decending);
+        _animCTRL.SetBool("IsWalking", _IsWalking);
+        _animCTRL.SetBool("IsRunning", _IsRunning);
+    }
+
+
+    // Fire weapons or grapple hook
+    //==============================================================================
+    public void AttachByRopeToTarget()
+    {
+        /*if (_rope != null)
+            DetachRopeFromTarget();*/
+
+        if(_rope == null)
         {
-            _rigidBD.MovePosition(transform.position + _moveToXZ);
-            TurnPlayerAvatar(_moveToXZ);
+            _IsSwinging = true;
+            _rigidBD.drag = 0.0f;
+            Debug.Log("Entered create rope");
+            this.gameObject.AddComponent<SpringJoint>();
+            _rope = this.GetComponent<SpringJoint>();
+
+            _rope.autoConfigureConnectedAnchor = false;
+
+            _rope.connectedBody = _target.GetComponent<Rigidbody>();
+            _rope.anchor = new Vector3(0.0f, 0.32f, 0.0f); //_rope.anchor.Set(0.0f, 0.32f, 0.0f);
+            _rope.connectedAnchor = new Vector3(0.0f, -0.5f, 0.0f); //_rope.connectedAnchor.Set(0.0f, -0.5f, 0.0f);
+
+            Vector3 difference = _target.transform.position - transform.position;
+            float distance = Vector3.Magnitude(difference);
+            _rope.maxDistance = distance;
+            _rope.minDistance = 0.75f;
+
+            _rope.spring = 1000.0f;
+            _rope.damper = 0.2f;
+            _rope.tolerance = 0.025f;
+            _rope.breakForce = Mathf.Infinity;
+            _rope.breakTorque = Mathf.Infinity;
         }
-        else if (_IsAirborn && !_IsSwinging)
-            _rigidBD.MovePosition(transform.position + _moveToXZ);
-        else if (_IsSwinging)
-        {
-            _rigidBD.AddForce(_moveToXZ * 5);
-            TurnPlayerAvatar(_moveToXZ);
-        }
+    }
+
+    public void DetachRopeFromTarget()
+    {
+        _IsSwinging = false;
+        _rigidBD.drag = 0.5f;
+        _target = null;
+        _ropeLine._posA = transform;
+        Destroy(_rope);
+        _rope = null;
     }
 }
