@@ -3,10 +3,12 @@ using System.Collections;
 
 public class Player_CTRL : MonoBehaviour
 {
+
     [SerializeField]
     private Targeting_System_SCR _crossHair;
     [SerializeField]
     private Line_SCR _ropeLine;
+    private SpringJoint _rope = null;
 
     [SerializeField]
     private Transform _cameraPivot;
@@ -15,7 +17,6 @@ public class Player_CTRL : MonoBehaviour
 
     private Vector3 _cameraForward;
     private Vector3 _cameraRight;
-
     private Vector3 _moveToXZ;
 
     private GameObject _target;
@@ -24,9 +25,9 @@ public class Player_CTRL : MonoBehaviour
 
     private bool _IsWalking = false;
     private bool _IsRunning = false;
-    public bool _Ascending = false;
+    private bool _Ascending = false;
     public bool _Decending = false;
-    public bool _IsJumping = false;
+    private bool _IsJumping = false;
     public bool _IsAirborn = false;
 
     public float _walkSpeed;
@@ -105,11 +106,55 @@ public class Player_CTRL : MonoBehaviour
                 _target = _crossHair.GetTarget();
                 _ropeLine._posA = _target.transform;
             }
+
+            if (_target != null && _Decending)
+            {
+                if (_rope == null)
+                {
+                    _rigidBD.drag = 0.0f;
+                    Debug.Log("Entered create rope");
+                    this.gameObject.AddComponent<SpringJoint>();
+                    _rope = this.GetComponent<SpringJoint>();
+
+                    _rope.autoConfigureConnectedAnchor = false;
+
+                    _rope.connectedBody = _target.GetComponent<Rigidbody>();
+                    _rope.anchor = new Vector3(0.0f, 0.32f, 0.0f); //_rope.anchor.Set(0.0f, 0.32f, 0.0f);
+                    _rope.connectedAnchor = new Vector3(0.0f, -0.5f, 0.0f); //_rope.connectedAnchor.Set(0.0f, -0.5f, 0.0f);
+
+                    Vector3 difference = _target.transform.position - transform.position;
+                    float distance = Vector3.Magnitude(difference);
+                    _rope.maxDistance = distance;
+                    _rope.minDistance = distance;
+
+                    _rope.spring = 1000.0f;
+                    _rope.damper = 0.2f;
+                    _rope.tolerance = 0.025f;
+                    _rope.breakForce = Mathf.Infinity;
+                    _rope.breakTorque = Mathf.Infinity;
+                }
+            }
+
+            if (_rope != null)
+            {
+                /*Vector3 targetPos = _target.transform.position;
+                Vector3 playerPos = transform.position;
+                _rope.anchor.Set(playerPos.x, playerPos.y, playerPos.z);
+                _rope.connectedAnchor.Set(targetPos.x, targetPos.y, targetPos.z);*/
+
+                //_rope.anchor.Set(0.0f, 0.0f, 0.0f);
+                //_rope.connectedAnchor.Set(0.0f, 0.0f, 0.0f);
+
+                Debug.Log("Set Anchors");
+            }
         }
         else
         {
+            _rigidBD.drag = 0.5f;
             _target = null;
             _ropeLine._posA = transform;
+            Destroy(_rope);
+            _rope = null;
         }
     }
 
