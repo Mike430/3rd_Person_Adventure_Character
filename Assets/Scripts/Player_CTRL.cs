@@ -29,10 +29,12 @@ public class Player_CTRL : MonoBehaviour
     public bool _Decending = false;
     private bool _IsJumping = false;
     public bool _IsAirborn = false;
+    public bool _swinging = false;
 
     public float _walkSpeed;
     public float _runSpeed;
     public float _jumpForce;
+    public float _swingForce;
 
     // Use this for initialization
     void Start ()
@@ -80,6 +82,12 @@ public class Player_CTRL : MonoBehaviour
             _IsWalking = false;
         }
 
+        if (_swinging)
+        {
+            if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+                CalculateHorizontalMovement(_swingForce);
+        }
+
 
         UpdateRope();
 
@@ -111,6 +119,7 @@ public class Player_CTRL : MonoBehaviour
             {
                 if (_rope == null)
                 {
+                    _swinging = true;
                     _rigidBD.drag = 0.0f;
                     Debug.Log("Entered create rope");
                     this.gameObject.AddComponent<SpringJoint>();
@@ -125,7 +134,7 @@ public class Player_CTRL : MonoBehaviour
                     Vector3 difference = _target.transform.position - transform.position;
                     float distance = Vector3.Magnitude(difference);
                     _rope.maxDistance = distance;
-                    _rope.minDistance = distance;
+                    _rope.minDistance = 0.5f;
 
                     _rope.spring = 1000.0f;
                     _rope.damper = 0.2f;
@@ -134,22 +143,10 @@ public class Player_CTRL : MonoBehaviour
                     _rope.breakTorque = Mathf.Infinity;
                 }
             }
-
-            if (_rope != null)
-            {
-                /*Vector3 targetPos = _target.transform.position;
-                Vector3 playerPos = transform.position;
-                _rope.anchor.Set(playerPos.x, playerPos.y, playerPos.z);
-                _rope.connectedAnchor.Set(targetPos.x, targetPos.y, targetPos.z);*/
-
-                //_rope.anchor.Set(0.0f, 0.0f, 0.0f);
-                //_rope.connectedAnchor.Set(0.0f, 0.0f, 0.0f);
-
-                Debug.Log("Set Anchors");
-            }
         }
         else
         {
+            _swinging = false;
             _rigidBD.drag = 0.5f;
             _target = null;
             _ropeLine._posA = transform;
@@ -209,7 +206,15 @@ public class Player_CTRL : MonoBehaviour
 
     void MovePlayerXZ()
     {
-        _rigidBD.MovePosition(transform.position + _moveToXZ);
-        TurnPlayerAvatar(_moveToXZ);
+        if (!_swinging)
+        {
+            _rigidBD.MovePosition(transform.position + _moveToXZ);
+            TurnPlayerAvatar(_moveToXZ);
+        }
+        else
+        {
+            _rigidBD.AddForce(_moveToXZ);
+            TurnPlayerAvatar(_moveToXZ);
+        }
     }
 }
