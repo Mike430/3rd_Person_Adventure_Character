@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Player_CTRL : MonoBehaviour
 {
-
+    [SerializeField]
+    private Text _scoreText;
     [SerializeField]
     private Targeting_System_SCR _crossHair;
     [SerializeField]
@@ -28,13 +31,15 @@ public class Player_CTRL : MonoBehaviour
     private bool _Ascending = false;
     private bool _Decending = false;
     private bool _IsJumping = false;
-    public bool _IsAirborn = false;
-    public bool _IsSwinging = false;
+    private bool _IsAirborn = false;
+    private bool _IsSwinging = false;
 
     public float _walkSpeed;
     public float _runSpeed;
     public float _jumpForce;
     public float _swingForce;
+
+    public int _score = 0;
 
     // Prerequisits
     //==============================================================================
@@ -50,6 +55,11 @@ public class Player_CTRL : MonoBehaviour
     //==============================================================================
     private void FixedUpdate ()
     {
+        if (Input.GetKey(KeyCode.R))
+            //Application.LoadLevelAsync("");
+            SceneManager.LoadScene("lvl_1");
+            
+
         _cameraForward = _cameraPivot.forward;
         _cameraRight = _cameraPivot.right;
 
@@ -89,6 +99,8 @@ public class Player_CTRL : MonoBehaviour
         UpdateRope();
 
         UpdateAnimCTRL();
+
+        UpdateScore();
     }
 
     private void UpdateRope()
@@ -203,6 +215,15 @@ public class Player_CTRL : MonoBehaviour
         _animCTRL.SetBool("Decending", _Decending);
         _animCTRL.SetBool("IsWalking", _IsWalking);
         _animCTRL.SetBool("IsRunning", _IsRunning);
+    }
+
+    private void UpdateScore()
+    {
+        if (transform.position.y > _score)
+        {
+            _score = (int)transform.position.y;
+            _scoreText.text = "SCORE: " + _score;
+        }
     }
 
 
