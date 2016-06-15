@@ -88,6 +88,7 @@ public class Player_CTRL : MonoBehaviour
             {
                 _rigidBD.AddForce(Vector3.up * _jumpForce);
                 _IsJumping = true;
+                _IsAirborn = true;
             }
         }
         else
@@ -96,10 +97,9 @@ public class Player_CTRL : MonoBehaviour
             _IsWalking = false;
         }
 
+        UpdateDrag();
         UpdateRope();
-
         UpdateAnimCTRL();
-
         UpdateScore();
     }
 
@@ -130,6 +130,16 @@ public class Player_CTRL : MonoBehaviour
             if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0) && _IsAirborn)
                 CalculateHorizontalMovement(_swingForce);
         }
+    }
+
+    private void UpdateDrag()
+    {
+        if(!_IsAirborn)
+            _rigidBD.drag = Mathf.Infinity;
+        else if (_IsSwinging)
+            _rigidBD.drag = 0.0f;
+        else
+            _rigidBD.drag = 0.5f;
     }
 
 
@@ -237,7 +247,7 @@ public class Player_CTRL : MonoBehaviour
         if(_rope == null)
         {
             _IsSwinging = true;
-            _rigidBD.drag = 0.0f;
+            //_rigidBD.drag = 0.0f;
             Debug.Log("Entered create rope");
             this.gameObject.AddComponent<SpringJoint>();
             _rope = this.GetComponent<SpringJoint>();
@@ -264,7 +274,7 @@ public class Player_CTRL : MonoBehaviour
     public void DetachRopeFromTarget()
     {
         _IsSwinging = false;
-        _rigidBD.drag = 0.5f;
+        //_rigidBD.drag = 0.5f;
         _target = null;
         _ropeLine._posA = transform;
         Destroy(_rope);
