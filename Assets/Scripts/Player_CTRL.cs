@@ -75,12 +75,14 @@ public class Player_CTRL : MonoBehaviour
                 if (Input.GetKey(KeyCode.LeftShift))
                 {
                     _IsRunning = true;
-                    CalculateHorizontalMovement(_runSpeed);
+                    //CalculateHorizontalMovement(_runSpeed);
+                    MoveAcrossFloorSurface(_runSpeed);
                 }
                 else
                 {
                     _IsWalking = true;
-                    CalculateHorizontalMovement(_walkSpeed);
+                    //CalculateHorizontalMovement(_walkSpeed);
+                    MoveAcrossFloorSurface(_walkSpeed);
                 }
             }
 
@@ -149,6 +151,29 @@ public class Player_CTRL : MonoBehaviour
     {
         _moveToXZ += speed * (Input.GetAxis("Vertical") * _cameraForward);
         _moveToXZ += speed * (Input.GetAxis("Horizontal") * _cameraRight);
+
+        _moveToXZ *= Time.deltaTime;
+        MovePlayerXZ();
+    }
+
+    private void MoveAcrossFloorSurface(float speed)
+    {
+        _moveToXZ += speed * (Input.GetAxis("Vertical") * _cameraForward);
+        _moveToXZ += speed * (Input.GetAxis("Horizontal") * _cameraRight);
+
+        RaycastHit hit;
+        Vector3 origin = new Vector3(transform.position.x, transform.position.y + 0.25f, transform.position.z);
+        Ray ray = new Ray(origin, Vector3.down);
+        if (Physics.Raycast(ray, out hit, 0.35f))
+        {
+            // http://answers.unity3d.com/questions/10323/calculating-a-movement-direction-that-is-a-tangent.html
+            Vector3 temp = Vector3.Cross(hit.normal, _moveToXZ);
+            Vector3 myDirection = Vector3.Cross(temp, hit.normal);
+            _moveToXZ = myDirection;
+            Debug.Log("X: " + _moveToXZ.x + " Y: " + _moveToXZ.y + " Z: " + _moveToXZ.z);
+            //_moveToXZ = Vector3.RotateTowards(Vector3.up, hit.normal, 2.0f, 2.0f);
+            //transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+        }
 
         _moveToXZ *= Time.deltaTime;
         MovePlayerXZ();
