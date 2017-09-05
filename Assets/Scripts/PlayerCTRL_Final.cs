@@ -1,20 +1,13 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System;
 
-enum PLAYER_STATES{
-    IDLE,
-    WALK,
-    RUN,
-    AIRBOURNE
-}
 
-public class Player_CTRL_V2 : MonoBehaviour {
+public class PlayerCTRL_Final : MonoBehaviour {
     // GamePlay Variables
     [SerializeField]
-    private Transform _mCameraOrientation;
+    private Transform _mCameraXZForwards;
     [SerializeField]
     private float _mWalkingSpeed;
     [SerializeField]
@@ -37,28 +30,41 @@ public class Player_CTRL_V2 : MonoBehaviour {
     private Rigidbody _mRigidBD;
     private bool _mTouchingFloor;
 
-    // Debug
-    public Renderer _mRend;
-    public Material _mIdleStateMat;
-    public Material _mWalkStateMat;
-    public Material _mRunStateMat;
-    public Material _mAirbourneStateMat;
+    [SerializeField]
+    private float _mSwingForce;
+    [SerializeField]
+    private Targeting_System_SCR _mCrossHair;
+    [SerializeField]
+    private Line_SCR _mRopeLine;
+    [SerializeField]
+    private GameObject _mPlayerAvatar;
+    [SerializeField]
+    private Transform _mDefaultRopEnd;
 
-    
-    void Start ()
+    private Animator _mAnimCTRL;
+    private SpringJoint _mRopeJoint;
+    private GameObject _mTargetedObject;
+    private bool _mIsSwinging;
+
+
+    void Start()
     {
         _mRigidBD = GetComponent<Rigidbody>();
+        _mAnimCTRL = GetComponentInChildren<Animator>();
+        
         _mUiText.text = "No Parent";
         _mState = PLAYER_STATES.IDLE;
         _mTouchingFloor = false;
+
+        DetachRopeFromTarget();
     }
 
-    
+
     void FixedUpdate()
     {
         _mTouchingFloor = IsTouchingFloor();
+        UpdateRope();
 
-        //_mArtificialVelocity *= (_mArtificalVelocityMagDegredation * Time.deltaTime);
 
         if (!_mTouchingFloor /* && DistanceToFloor() > 0.25f*/)
         {
@@ -83,12 +89,15 @@ public class Player_CTRL_V2 : MonoBehaviour {
                 _mState = PLAYER_STATES.WALK;
                 _mArtificialVelocity = FlattenMovementVectorAgainstFloor(CalculateHorizontalMovementVecotor(_mWalkingSpeed));
             }
+            Vector3 heading = _mArtificialVelocity;
+            heading.y = 0;
+            heading.Normalize();
+            TurnPlayerAvatar(heading);
         }
         else
         {
             _mState = PLAYER_STATES.IDLE;
-            // 30 is good for this line
-            //_mArtificialVelocity *= (_mArtificalVelocityMagDegredation * Time.deltaTime);
+
             if (_mArtificialVelocity.magnitude > 0.01f)
             {
                 Vector3 subTraction = _mArtificialVelocity * _mArtificalVelocityMagDegredation;
@@ -113,17 +122,16 @@ public class Player_CTRL_V2 : MonoBehaviour {
                 AssignTansformParent(floor);
         }
 
-        UpdateStateMaterial();
-
         _mRigidBD.MovePosition(transform.position + _mArtificialVelocity);
+        UpdateAnimCTRL();
     }
 
 
     Vector3 CalculateHorizontalMovementVecotor(float speed)
     {
         Vector3 direction = new Vector3();
-        direction += (_mCameraOrientation.forward * (speed * Input.GetAxis("Vertical"))) * Time.deltaTime;
-        direction += (_mCameraOrientation.right * (speed * Input.GetAxis("Horizontal"))) * Time.deltaTime;
+        direction += (_mCameraXZForwards.forward * (speed * Input.GetAxis("Vertical"))) * Time.deltaTime;
+        direction += (_mCameraXZForwards.right * (speed * Input.GetAxis("Horizontal"))) * Time.deltaTime;
         return direction;
     }
 
@@ -187,31 +195,19 @@ public class Player_CTRL_V2 : MonoBehaviour {
         }
     }
 
-    private void UpdateStateMaterial()
+    private void TurnPlayerAvatar(Vector3 heading)
     {
-        switch (_mState)
-        {
-            case PLAYER_STATES.IDLE:
-                {
-                    _mRend.material = _mIdleStateMat;
-                    break;
-                }
-            case PLAYER_STATES.WALK:
-                {
-                    _mRend.material = _mWalkStateMat;
-                    break;
-                }
-            case PLAYER_STATES.RUN:
-                {
-                    _mRend.material = _mRunStateMat;
-                    break;
-                }
-            case PLAYER_STATES.AIRBOURNE:
-                {
-                    _mRend.material = _mAirbourneStateMat;
-                    break;
-                }
-        }
+        float step = 10 * Time.deltaTime;
+        Vector3 newDir = Vector3.RotateTowards(_mPlayerAvatar.transform.forward, heading, step, 0.0F);
+        _mPlayerAvatar.transform.rotation = Quaternion.LookRotation(newDir);
+    }
+
+    private void UpdateAnimCTRL()
+    {
+        _mAnimCTRL.SetBool("Ascending", _mState == PLAYER_STATES.AIRBOURNE && _mRigidBD.velocity.y > 0);
+        _mAnimCTRL.SetBool("Decending", _mState == PLAYER_STATES.AIRBOURNE && _mRigidBD.velocity.y <= 0);
+        _mAnimCTRL.SetBool("IsWalking", _mState == PLAYER_STATES.WALK);
+        _mAnimCTRL.SetBool("IsRunning", _mState == PLAYER_STATES.RUN);
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -222,5 +218,73 @@ public class Player_CTRL_V2 : MonoBehaviour {
             transform.position = new Vector3(transform.position.x, transform.position.y - (GetFloor().distance - 0.28f), transform.position.z);
         }
         _mTouchingFloor = true;
+    }
+
+    private void UpdateRope()
+    {
+        if (Input.GetAxis("Fire1") != 0)
+        {
+            if (_mCrossHair.FoundTarget() && _mTargetedObject == null)
+            {
+                _mTargetedObject = _mCrossHair.GetTarget();
+                _mRopeLine._posA = _mTargetedObject.transform;
+                AttachByRopeToTarget();
+            }
+        }
+        else
+        {
+            DetachRopeFromTarget();
+        }
+
+        if (_mIsSwinging)
+        {
+            if (Input.GetKey(KeyCode.Q) && _mRopeJoint.maxDistance > 0.75f)
+                _mRopeJoint.maxDistance -= 5.0f * Time.deltaTime;
+
+            if (Input.GetKey(KeyCode.E) && _mRopeJoint.maxDistance < 100.0f)
+                _mRopeJoint.maxDistance += 5.0f * Time.deltaTime;
+
+            if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0) && _mState == PLAYER_STATES.AIRBOURNE)
+                _mRigidBD.AddForce(CalculateHorizontalMovementVecotor(_mSwingForce));
+        }
+    }
+
+    public void AttachByRopeToTarget()
+    {
+        if (_mRopeJoint == null)
+        {
+            _mIsSwinging = true;
+            //_rigidBD.drag = 0.0f;
+            Debug.Log("Entered create rope");
+            this.gameObject.AddComponent<SpringJoint>();
+            _mRopeJoint = this.GetComponent<SpringJoint>();
+
+            _mRopeJoint.autoConfigureConnectedAnchor = false;
+
+            _mRopeJoint.connectedBody = _mTargetedObject.GetComponent<Rigidbody>();
+            _mRopeJoint.anchor = new Vector3(0.0f, 0.32f, 0.0f); //_rope.anchor.Set(0.0f, 0.32f, 0.0f);
+            _mRopeJoint.connectedAnchor = new Vector3(0.0f, -0.5f, 0.0f); //_rope.connectedAnchor.Set(0.0f, -0.5f, 0.0f);
+
+            Vector3 difference = _mTargetedObject.transform.position - transform.position;
+            float distance = Vector3.Magnitude(difference);
+            _mRopeJoint.maxDistance = distance;
+            _mRopeJoint.minDistance = 0.75f;
+
+            _mRopeJoint.spring = 1000.0f;
+            _mRopeJoint.damper = 0.2f;
+            _mRopeJoint.tolerance = 0.025f;
+            _mRopeJoint.breakForce = Mathf.Infinity;
+            _mRopeJoint.breakTorque = Mathf.Infinity;
+        }
+    }
+
+    public void DetachRopeFromTarget()
+    {
+        _mIsSwinging = false;
+        //_rigidBD.drag = 0.5f;
+        _mTargetedObject = null;
+        _mRopeLine._posA = _mDefaultRopEnd;
+        Destroy(_mRopeJoint);
+        _mRopeJoint = null;
     }
 }
